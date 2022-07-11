@@ -1,0 +1,19 @@
+# Copyright (c) 2021 Graphcore Ltd. All rights reserved.
+
+resnet18_spmd_test:
+  model-name: resnet18
+  micro-batch-size: 64
+  num-replicas: 4
+  num-epochs: 10
+  precision: '32.32'
+  enable-spmd: True
+  seed: 420
+  validation: False
+
+resnet18_test:
+  model-name: resnet18
+  micro-batch-size: 256
+  num-epochs: 10
+  precision: '32.32'
+  seed: 420
+  validation: False

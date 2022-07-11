@@ -27,6 +27,7 @@ def configure_ipu(hparams) -> ipu.config.IPUConfig:
     cfg.optimizations.maximum_cross_replica_sum_buffer_size = hparams.max_cross_replica_buffer_size
     cfg.norms.experimental.distributed_batch_norm_replica_group_size = hparams.dbn_replica_group_size
     cfg.floating_point_behaviour.esr = AVAILABLE_SR_OPTIONS[hparams.stochastic_rounding]
+    cfg.experimental.enable_spmd = hparams.enable_spmd
 
     if hparams.gather_conv_output:
         cfg.convolutions.poplar_options['gatherConvOutput'] = 'true'

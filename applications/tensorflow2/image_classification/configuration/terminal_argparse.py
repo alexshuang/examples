@@ -118,6 +118,10 @@ def add_arguments(parser):
     parser.add_argument('--fused-preprocessing', type=str_to_bool, nargs='?', const=True, default=False,
                         help='Use fused operations for preprocessing images on device.')
 
+    # spmd
+    parser.add_argument('--enable-spmd', type=bool, default=False,
+                        help='Enable GSPMD')
+
     # Poplar optimizations
     parser.add_argument('--half-partials', type=str_to_bool, nargs='?', const=True, default=False,
                         help='Accumulate matmul and convolution partial results in half precision')
